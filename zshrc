@@ -75,8 +75,7 @@ function gitcommit()
   else
     source_dir=plugins
   fi
-  for repo in $source_dir/**/.git
-  do
+  for repo in $source_dir/**/.git do
     cd $repo/.. 
     OUTPUT=`git svn dcommit`
     LENGTH=`echo "$OUTPUT"|wc -l`
@@ -112,7 +111,11 @@ function gitup
 }
 function gitbranch()
 {
+<<<<<<< HEAD
   git branch
+=======
+  git svn branch
+>>>>>>> work configuration
   if [[ -d src ]]
   then
     source_dir=src
@@ -121,15 +124,14 @@ function gitbranch()
   fi
   for repo in $source_dir/**/.git
   do
-    cd $repo/..
-    OUTPUT=`git branch`
+    wt=${repo:0:${#repo}-4}
+    OUTPUT=`git --git-dir=$repo --work-tree=$wt svn branch`
     LENGTH=`echo "$OUTPUT"|wc -l`
     if [[ $LENGTH -gt 2 ]]
     then
-      echo $repo ":"
+      echo $wt ":"
       echo $OUTPUT
     fi
-    cd -
   done
 }
 alias ack=ack-grep
