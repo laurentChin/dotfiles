@@ -112,7 +112,7 @@ function gitup
 }
 function gitbranch()
 {
-  git svn branch
+  git branch
   if [[ -d src ]]
   then
     source_dir=src
@@ -121,14 +121,15 @@ function gitbranch()
   fi
   for repo in $source_dir/**/.git
   do
-    wt=${repo:0:${#repo}-4}
-    OUTPUT=`git --git-dir=$repo --work-tree=$wt svn branch`
+    cd $repo/..
+    OUTPUT=`git branch`
     LENGTH=`echo "$OUTPUT"|wc -l`
     if [[ $LENGTH -gt 2 ]]
     then
-      echo $wt ":"
+      echo $repo ":"
       echo $OUTPUT
     fi
+    cd -
   done
 }
 alias ack=ack-grep
