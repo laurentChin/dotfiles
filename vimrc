@@ -23,7 +23,7 @@ let g:ctrlp_follow_symlinks=1
 let g:ctrlp_extensions = ['tag']
 inoremap jj <Esc>
 autocmd FileType less,sass,yml,css,html,php,twig autocmd BufWritePre <buffer> :%s/\s\+$//e
-set grepprg=ack-grep\ --ignore-dir=cache\ --ignore-dir=.rsync_cache
+set grepprg=ack\ --ignore-dir\ cache
 let php_noShortTags=1
 set makeprg=php\ -ln\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
@@ -32,3 +32,4 @@ set ignorecase
 set smartcase
 set incsearch
 set autoindent
+set cc=80
