@@ -20,6 +20,7 @@ set wildmenu
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.project$\|\.settings$\|\.buildpath$\|\.sass-cache$\|cache$\|log$'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_follow_symlinks=1
+let g:ctrlp_extensions = ['tag']
 inoremap jj <Esc>
 autocmd FileType less,sass,yml,css,html,php,twig autocmd BufWritePre <buffer> :%s/\s\+$//e
 set grepprg=ack-grep\ --ignore-dir=cache\ --ignore-dir=.rsync_cache
