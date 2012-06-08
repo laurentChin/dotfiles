@@ -75,7 +75,8 @@ function gitcommit()
   else
     source_dir=plugins
   fi
-  for repo in $source_dir/**/.git do
+  for repo in $source_dir/**/.git
+  do
     cd $repo/.. 
     OUTPUT=`git svn dcommit`
     LENGTH=`echo "$OUTPUT"|wc -l`
