@@ -124,7 +124,7 @@ function gitbranch()
     cd $repo/..
     OUTPUT=`git branch`
     LENGTH=`echo "$OUTPUT"|wc -l`
-    if [[ $LENGTH -gt 2 ]]
+    if [[ $LENGTH -gt 1 ]]
     then
       echo $repo ":"
       echo $OUTPUT
