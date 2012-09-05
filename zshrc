@@ -78,13 +78,7 @@ function gitcommit()
   for repo in $source_dir/**/.git
   do
     cd $repo/.. 
-    OUTPUT=`git svn dcommit`
-    LENGTH=`echo "$OUTPUT"|wc -l`
-    if [[ $LENGTH -gt 2 ]]
-    then
-      echo $repo ":"
-      echo $OUTPUT
-    fi
+    git svn dcommit
     cd -
   done
 }
