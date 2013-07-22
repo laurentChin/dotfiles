@@ -2,9 +2,9 @@
 	name = Laurent Janet
 	email = ljanet@universcine.com
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+	diff = auto
+	status = auto
+	branch = auto
 	ui = true
 
 [color "branch"]
@@ -28,11 +28,13 @@
   keepBackup = false
   tool = vimdiff
 [core]
+	editor = vim
 	pager = most
-	excludesfile = /home/laurent/.gitignore_global
-	editor = vi
+	excludesfile = ~/.gitignore_global
 [alias]
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [push]
 	default = simple
+[init]
+	templatedir = ~/.git_template
