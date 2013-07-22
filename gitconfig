@@ -29,7 +29,8 @@
   tool = vimdiff
 [core]
 	pager = most
-	excludesfile = /home/users/gparis/.gitignore_global
+	excludesfile = /home/laurent/.gitignore_global
+	editor = vi
 [alias]
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
